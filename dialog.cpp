@@ -10,18 +10,18 @@ Dialog::Dialog(QWidget *parent) :
 {
 
     ui->setupUi(this);
-    connect(ui->lineEdit,SIGNAL(clicked()),this,SLOT(send_form()));
-
-
 }
 
 Dialog::~Dialog()
 {
     delete ui;
 }
-void Dialog::send_form()
+
+void Dialog::accept()
 {
-
- QString Yname = ui->lineEdit->text();
-
+   QString Yname=ui->lineEdit->text();
+   QString name=ui->lineEdit_2->text();
+   QString gender_text = ui->lineEdit_3->text();
+   int gender = gender_text.toInt();
+   QWidget::close();
 }

@@ -5,7 +5,6 @@
 
 namespace Ui {
 class Dialog;
-
 }
 
 class Dialog : public QDialog
@@ -17,10 +16,9 @@ public:
     ~Dialog();
 
 private:
-
     Ui::Dialog *ui;
-private slots:
-    void send_form();
+    void accept();
+//private slots:
 };
 
 #endif // DIALOG_H

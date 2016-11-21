@@ -14,7 +14,7 @@ DialogStart::~DialogStart()
 }
 void DialogStart::on_pushButton_clicked()
 {
-Dialog dan(this);
-dan.exec();
-QWidget::close();
+    Dialog dan(this);
+    dan.exec();
+    QWidget::close();
 }

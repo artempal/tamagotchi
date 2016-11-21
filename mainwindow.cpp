@@ -15,4 +15,10 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
+void MainWindow::set_indicators(QString Yname, QString name, int gender)
+{
+    _Yname = Yname;
+    _name = name;
+    _gender = gender;
+}
 

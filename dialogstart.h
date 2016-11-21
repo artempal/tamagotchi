@@ -17,6 +17,7 @@ public:
 
 private:
     Ui::DialogStart *ui;
+
 private slots:
     void on_pushButton_clicked();
 };
