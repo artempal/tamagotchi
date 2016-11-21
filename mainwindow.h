@@ -2,6 +2,7 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <createdialog.h>
 
 namespace Ui {
 class MainWindow;
@@ -17,8 +18,12 @@ public:
 
 private:
     Ui::MainWindow *ui;
+    QString _user_name; //имя игрока
+    QString _pet_name; //имя питомца
+    int _gender; //пол
 private slots:
     void open_createdialog();
+    void set_data(QString, QString, int);
 };
 
 #endif // MAINWINDOW_H
