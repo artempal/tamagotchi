@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Dialog</string>
+   <string>Введи данные для начала:</string>
   </property>
   <widget class="QPushButton" name="ok_btn">
    <property name="geometry">
@@ -80,6 +80,9 @@
      <widget class="QRadioButton" name="radioButton">
       <property name="text">
        <string>Мужской</string>
+      </property>
+      <property name="checked">
+       <bool>true</bool>
       </property>
      </widget>
     </item>
