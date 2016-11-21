@@ -2,6 +2,8 @@
 #define CREATEDIALOG_H
 
 #include <QDialog>
+#include <QString>
+#include <mainwindow.h>
 
 namespace Ui {
 class CreateDialog;
@@ -17,6 +19,10 @@ public:
 
 private:
     Ui::CreateDialog *ui;
+private slots:
+    void onSendData();
+signals:
+void sendData(QString,QString,int);
 };
 
 #endif // CREATEDIALOG_H
