@@ -2,6 +2,7 @@
 #include "ui_mainwindow.h"
 #include "createdialog.h"
 #include <QDebug>
+#include <QMessageBox>
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -9,8 +10,11 @@ MainWindow::MainWindow(QWidget *parent) :
 {
     ui->setupUi(this);
     ui->main_wid->hide();
+     ui->death_wid->hide();
     ui->start_wid->show();
     connect(ui->start_btn,SIGNAL(clicked(bool)), this, SLOT(open_createdialog())); //открытие диалога при нажатии на кнопку
+
+    connect(timer, SIGNAL(timeout()), SLOT(slot_update_indicators())); //обновление индикаторов по таймеру
 
 }
 
@@ -44,6 +48,7 @@ void MainWindow::create_main_wid()
     //movie->start();
     if(_gender == 1)ui->gender_label->setText("Мужчина"); else ui->gender_label->setText("Женщина");
     update_indicators();
+    timer->start(500);
 }
 
 void MainWindow::update_indicators()
@@ -58,3 +63,22 @@ void MainWindow::update_indicators()
     ui->hunger_label->setText(text);
 }
 
+void MainWindow::slot_update_indicators()
+{
+     int rand1 = qrand() % 4;
+     int rand2 = qrand() % 5;
+     if(_hunger>0) _hunger-=rand1;
+     if(_hp>0 && _hunger < 50)   _hp-=rand2; //надо поправить, чтобы не было отрицательных значений
+     if(_hp == 0)
+     {
+         update_indicators();
+         timer->stop();
+         death();
+     }
+    update_indicators();
+}
+void MainWindow::death()
+{
+    ui->main_wid->hide();
+    ui->death_wid->show();
+}
