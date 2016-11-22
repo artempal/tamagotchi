@@ -24,7 +24,7 @@
      </rect>
     </property>
     <property name="currentIndex">
-     <number>1</number>
+     <number>2</number>
     </property>
     <widget class="QWidget" name="start_wid">
      <widget class="QPushButton" name="start_btn">
@@ -149,6 +149,26 @@
       </property>
       <property name="text">
        <string>Лечить</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="death_wid">
+     <widget class="QLabel" name="death_text">
+      <property name="geometry">
+       <rect>
+        <x>270</x>
+        <y>150</y>
+        <width>311</width>
+        <height>91</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>18</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>Игра окончена</string>
       </property>
      </widget>
     </widget>
