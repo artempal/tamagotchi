@@ -14,31 +14,144 @@
    <string>Тамагочи от Лизы</string>
   </property>
   <widget class="QWidget" name="centralWidget">
-   <widget class="QPushButton" name="start_btn">
+   <widget class="QStackedWidget" name="stackedWidget">
     <property name="geometry">
      <rect>
-      <x>340</x>
-      <y>10</y>
-      <width>111</width>
-      <height>51</height>
+      <x>70</x>
+      <y>30</y>
+      <width>701</width>
+      <height>421</height>
      </rect>
     </property>
-    <property name="text">
-     <string>Начать игру</string>
+    <property name="currentIndex">
+     <number>1</number>
     </property>
-   </widget>
-   <widget class="QLabel" name="label">
-    <property name="geometry">
-     <rect>
-      <x>50</x>
-      <y>60</y>
-      <width>241</width>
-      <height>16</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Какой-то показатель</string>
-    </property>
+    <widget class="QWidget" name="start_wid">
+     <widget class="QPushButton" name="start_btn">
+      <property name="geometry">
+       <rect>
+        <x>210</x>
+        <y>160</y>
+        <width>271</width>
+        <height>81</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>15</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>Начать игру</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="main_wid">
+     <widget class="QLabel" name="name_label">
+      <property name="geometry">
+       <rect>
+        <x>60</x>
+        <y>50</y>
+        <width>241</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Привет , имя_пользователя</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="pet_name_label">
+      <property name="geometry">
+       <rect>
+        <x>60</x>
+        <y>80</y>
+        <width>221</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Твой питомец, имя_питомца тебя ждет!</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="gender_label">
+      <property name="geometry">
+       <rect>
+        <x>70</x>
+        <y>330</y>
+        <width>131</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Пол_питомца</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="photo">
+      <property name="geometry">
+       <rect>
+        <x>60</x>
+        <y>110</y>
+        <width>191</width>
+        <height>201</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Фотография питомца</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="hp_label">
+      <property name="geometry">
+       <rect>
+        <x>360</x>
+        <y>80</y>
+        <width>121</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Здоровье</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="hunger_label">
+      <property name="geometry">
+       <rect>
+        <x>360</x>
+        <y>120</y>
+        <width>121</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Голод </string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="feed_btn">
+      <property name="geometry">
+       <rect>
+        <x>360</x>
+        <y>180</y>
+        <width>191</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Кормить</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="heal_btn">
+      <property name="geometry">
+       <rect>
+        <x>360</x>
+        <y>230</y>
+        <width>191</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Лечить</string>
+      </property>
+     </widget>
+    </widget>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menuBar">
