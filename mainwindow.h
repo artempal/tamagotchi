@@ -21,9 +21,13 @@ private:
     QString _user_name; //имя игрока
     QString _pet_name; //имя питомца
     int _gender; //пол
+    int _hp = 100; //здоровье
+    int _hunger = 100; //голод
+    void create_main_wid(); //функция создания окна игры
+    void update_indicators(); //функция обновления индикаторов
 private slots:
-    void open_createdialog();
-    void set_data(QString, QString, int);
+    void open_createdialog(); //открытие диалога ввода
+    void set_data(QString, QString, int); //установка данных
 };
 
 #endif // MAINWINDOW_H
