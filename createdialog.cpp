@@ -7,7 +7,7 @@ CreateDialog::CreateDialog(QWidget *parent) :
     ui(new Ui::CreateDialog)
 {
     ui->setupUi(this);
-    connect(ui->ok_btn, SIGNAL(clicked()), this, SLOT(onSendData()));
+    connect(ui->ok_btn, SIGNAL(clicked()), this, SLOT(onSendData())); //при нажатии на кнопку запускаем функцию отправки данных
 }
 
 CreateDialog::~CreateDialog()
@@ -17,8 +17,8 @@ CreateDialog::~CreateDialog()
 
 void CreateDialog::onSendData()
 {
-    int gender;
-    if(ui->radioButton->isChecked())
+    int gender; //пол животного
+    if(ui->radioButton->isChecked()) //мужчина или женщина?
     {
         gender = 1;
     }
@@ -26,7 +26,7 @@ void CreateDialog::onSendData()
     {
         gender = 2;
     }
-    emit sendData( ui->lineEdit->text(), ui->lineEdit_2->text() ,gender);
+    emit sendData( ui->lineEdit->text(), ui->lineEdit_2->text() ,gender); //испускаем сигнал установки данных в главном окне
     QDialog::close();
 }
 
