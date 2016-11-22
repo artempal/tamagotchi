@@ -2,6 +2,7 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <QTimer>
 #include <createdialog.h>
 
 namespace Ui {
@@ -25,9 +26,12 @@ private:
     int _hunger = 100; //голод
     void create_main_wid(); //функция создания окна игры
     void update_indicators(); //функция обновления индикаторов
+    QTimer* timer = new QTimer(this); //таймер
+    void death(); //смерть питомца
 private slots:
     void open_createdialog(); //открытие диалога ввода
     void set_data(QString, QString, int); //установка данных
+    void slot_update_indicators(); // слот обновления индикаторов по таймеру
 };
 
 #endif // MAINWINDOW_H
