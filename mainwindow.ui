@@ -24,7 +24,7 @@
      </rect>
     </property>
     <property name="currentIndex">
-     <number>2</number>
+     <number>1</number>
     </property>
     <widget class="QWidget" name="start_wid">
      <widget class="QPushButton" name="start_btn">
@@ -137,7 +137,7 @@
        </font>
       </property>
       <property name="text">
-       <string>Голод </string>
+       <string>Сытость</string>
       </property>
      </widget>
      <widget class="QPushButton" name="feed_btn">
