@@ -156,10 +156,17 @@ void MainWindow::slot_hp_enable()
      ui->news_label->setText("Здравствуйте, доставка из интернет-аптеки 'Ласточка'. Теперь можно лечить питомца!");
      ui->heal_btn->setEnabled(true);
      btn_timer_hp->stop();
+     sounds(0);
 }
 void MainWindow::slot_hunger_enable()
 {
      ui->news_label->setText("Здравствуйте, мы доставили вам продукты. Теперь можно кормить питомца!");
      ui->feed_btn->setEnabled(true);
      btn_timer_hunger->stop();
+     sounds(1);
+}
+void MainWindow::sounds(int num)
+{
+    QString sound[] = {":/sound/knock.wav",":/sound/bell.wav"};
+    QSound::play(sound[num]);
 }

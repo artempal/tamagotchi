@@ -3,6 +3,7 @@
 
 #include <QMainWindow>
 #include <QTimer>
+#include <QSound>
 #include <createdialog.h>
 
 namespace Ui {
@@ -36,6 +37,7 @@ private:
     QTimer* btn_timer_hp = new QTimer(this); //таймер активации кнопки здоровья
     QTimer* btn_timer_hunger = new QTimer(this); //таймер активации кнопки голода
     void death(); //смерть питомца
+    void sounds(int num); //функция воспроизведения различых звуков
 private slots:
     void open_createdialog(); //открытие диалога ввода
     void set_data(QString, QString, int); //установка данных
