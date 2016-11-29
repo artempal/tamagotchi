@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/sound">
+        <file>bell.wav</file>
+        <file>knock.wav</file>
+    </qresource>
+</RCC>
