@@ -4,6 +4,7 @@
 #include <QMainWindow>
 #include <QTimer>
 #include <QSound>
+#include <QMovie>
 #include <createdialog.h>
 
 namespace Ui {
@@ -31,11 +32,13 @@ private:
     int _gender; //пол
     int _hp = 100; //здоровье
     int _hunger = 100; //голод
+    QString _file_name; //название файла анимации
     void create_main_wid(); //функция создания окна игры
     void update_indicators(); //функция обновления индикаторов
     QTimer* timer = new QTimer(this); //таймер обновления показателей
     QTimer* btn_timer_hp = new QTimer(this); //таймер активации кнопки здоровья
     QTimer* btn_timer_hunger = new QTimer(this); //таймер активации кнопки голода
+    QMovie *movie = new QMovie; //анимация питомца
     void death(); //смерть питомца
     void sounds(int num); //функция воспроизведения различых звуков
 private slots:
@@ -46,6 +49,7 @@ private slots:
     void slot_add_hunger();//добавление еды
     void slot_hp_enable(); //слот, который запускается по таймеру и делает активной кнопку здоровья
     void slot_hunger_enable();//слот, который запускается по таймеру и делает активной кнопку голода
+    void std_gif(); //отображает стандартную анимацию
 };
 
 #endif // MAINWINDOW_H

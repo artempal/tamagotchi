@@ -6,5 +6,11 @@
     <qresource prefix="/">
         <file>img/male.png</file>
         <file>img/female.png</file>
+        <file>gif/female/feed.gif</file>
+        <file>gif/female/heal.gif</file>
+        <file>gif/female/std.gif</file>
+        <file>gif/male/feed.gif</file>
+        <file>gif/male/heal.gif</file>
+        <file>gif/male/std.gif</file>
     </qresource>
 </RCC>

@@ -22,12 +22,14 @@ MainWindow::MainWindow(QWidget *parent) :
     connect(btn_timer_hp, SIGNAL(timeout()), SLOT(slot_hp_enable())); //по таймеру делаем кнопку Лечить доступной
     connect(ui->feed_btn,SIGNAL(clicked()),this,SLOT(slot_add_hunger())); //привязываем кнопку пополнения показателя голода к слоту
     connect(ui->heal_btn,SIGNAL(clicked()),this,SLOT(slot_add_hp())); //привязываем кнопку пополнения показателя здоровья к слоту
+    connect(movie,SIGNAL(finished()),this, SLOT(std_gif())); //когда закончится анимация действия сработает функция запуска стандартной анимации
 
 }
 
 MainWindow::~MainWindow()
 {
     delete ui;
+    delete movie;
 }
 void MainWindow::open_createdialog()
 {
@@ -58,9 +60,8 @@ void MainWindow::create_main_wid()
     QString pet_name = _pet_name;
     ui->name_label->setText(user_name.prepend("Привет, ").append("!"));
     ui->pet_name_label->setText(pet_name.prepend("Твой питомец ").append(" ждет тебя!"));
-    //QMovie *movie = new QMovie("animations/fire.gif");
-    //ui->photo->setMovie(movie);
-    //movie->start();
+    if(_gender == 1) _file_name="male"; else if(_gender == 2) _file_name = "female";
+    std_gif();
     if(_gender == 1)ui->gender_label->setText("Мальчик"); else ui->gender_label->setText("Девочка");
     update_indicators();
     ui->heal_btn->setEnabled(false); //делаем кнопки неактивными
@@ -136,6 +137,9 @@ void MainWindow::slot_add_hp()
     {
         _hp = 100;
     }
+    movie->stop(); //остановим стандартную анимацию
+    movie->setFileName(":/gif/"+_file_name+"/heal.gif"); //установим анимацию лечения
+    movie->start(); //запустим анимацию
     update_indicators(); //обновляем индикаторы
     btn_timer_hp->start(update_timer_hp); //запускаем таймер
     ui->heal_btn->setEnabled(false); //делаем кнопку неактивной
@@ -147,6 +151,9 @@ void MainWindow::slot_add_hunger()
         _hunger+=10;
         if(_hp < 95) _hp+=5; //если здоровье меньше 95 - прибавим чуть-чуть здоровья
     }
+    movie->stop(); //остановим стандартную анимацию
+    movie->setFileName(":/gif/"+_file_name+"/feed.gif"); //установим анимацию еды
+    movie->start(); //запустим анимацию
     update_indicators(); //обновляем индикаторы
     btn_timer_hunger->start(update_timer_hunger);//запускаем таймер
     ui->feed_btn->setEnabled(false);//делаем кнопку неактивной
@@ -169,4 +176,10 @@ void MainWindow::sounds(int num)
 {
     QString sound[] = {":/sound/knock.wav",":/sound/bell.wav"};
     QSound::play(sound[num]);
+}
+void MainWindow::std_gif()
+{
+    movie->setFileName(":/gif/"+_file_name+"/std.gif");
+    ui->photo->setMovie(movie);
+    movie->start();
 }
