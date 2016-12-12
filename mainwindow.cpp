@@ -61,7 +61,7 @@ void MainWindow::create_main_wid()
     //QMovie *movie = new QMovie("animations/fire.gif");
     //ui->photo->setMovie(movie);
     //movie->start();
-    if(_gender == 1)ui->gender_label->setText("Мужчина"); else ui->gender_label->setText("Женщина");
+    if(_gender == 1)ui->gender_label->setText("Мальчик"); else ui->gender_label->setText("Девочка");
     update_indicators();
     ui->heal_btn->setEnabled(false); //делаем кнопки неактивными
     ui->feed_btn->setEnabled(false);
@@ -97,7 +97,7 @@ void MainWindow::slot_update_indicators()
              _hunger=0;
          }
      }
-     if(_hp > 0 && _hunger < 50) //при значении голода больше 50% начинаем снижать здоровье
+     if(_hp > 0 && _hunger < 50) //при значении голода меньше 50% начинаем снижать здоровье
      {
          int delta = (100-_hunger) / 10 - 4; //меняем здоровье в зависимости от голода
          if(_hp>delta)
@@ -153,14 +153,14 @@ void MainWindow::slot_add_hunger()
 }
 void MainWindow::slot_hp_enable()
 {
-     ui->news_label->setText("Здравствуйте, доставка из интернет-аптеки 'Ласточка'. Теперь можно лечить питомца!");
+     ui->news_label->setText("Здравствуйте, доставка из интернет-аптеки 'Ласточка'. Теперь можете вылечить своего питомца!");
      ui->heal_btn->setEnabled(true);
      btn_timer_hp->stop();
      sounds(0);
 }
 void MainWindow::slot_hunger_enable()
 {
-     ui->news_label->setText("Здравствуйте, мы доставили вам продукты. Теперь можно кормить питомца!");
+     ui->news_label->setText("Здравствуйте, мы доставили вам еду. Теперь можете покормить своего питомца!");
      ui->feed_btn->setEnabled(true);
      btn_timer_hunger->stop();
      sounds(1);

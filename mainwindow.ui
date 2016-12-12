@@ -17,8 +17,8 @@
    <widget class="QStackedWidget" name="stackedWidget">
     <property name="geometry">
      <rect>
-      <x>70</x>
-      <y>30</y>
+      <x>90</x>
+      <y>80</y>
       <width>701</width>
       <height>531</height>
      </rect>
@@ -51,9 +51,9 @@
       <property name="geometry">
        <rect>
         <x>60</x>
-        <y>50</y>
+        <y>40</y>
         <width>241</width>
-        <height>16</height>
+        <height>51</height>
        </rect>
       </property>
       <property name="text">
@@ -63,8 +63,8 @@
      <widget class="QLabel" name="pet_name_label">
       <property name="geometry">
        <rect>
-        <x>60</x>
-        <y>80</y>
+        <x>370</x>
+        <y>100</y>
         <width>221</width>
         <height>16</height>
        </rect>
@@ -102,8 +102,8 @@
      <widget class="QLabel" name="hp_label">
       <property name="geometry">
        <rect>
-        <x>360</x>
-        <y>70</y>
+        <x>270</x>
+        <y>270</y>
         <width>201</width>
         <height>51</height>
        </rect>
@@ -122,8 +122,8 @@
      <widget class="QLabel" name="hunger_label">
       <property name="geometry">
        <rect>
-        <x>360</x>
-        <y>120</y>
+        <x>270</x>
+        <y>170</y>
         <width>201</width>
         <height>51</height>
        </rect>
@@ -143,8 +143,8 @@
      <widget class="QPushButton" name="feed_btn">
       <property name="geometry">
        <rect>
-        <x>360</x>
-        <y>190</y>
+        <x>490</x>
+        <y>160</y>
         <width>201</width>
         <height>61</height>
        </rect>
@@ -233,8 +233,8 @@
      <widget class="QPushButton" name="heal_btn">
       <property name="geometry">
        <rect>
-        <x>360</x>
-        <y>260</y>
+        <x>490</x>
+        <y>270</y>
         <width>201</width>
         <height>61</height>
        </rect>
@@ -324,7 +324,7 @@
       <property name="geometry">
        <rect>
         <x>360</x>
-        <y>340</y>
+        <y>380</y>
         <width>211</width>
         <height>151</height>
        </rect>
