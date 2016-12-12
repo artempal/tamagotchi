@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>400</width>
-    <height>300</height>
+    <width>456</width>
+    <height>457</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -17,7 +17,7 @@
    <property name="geometry">
     <rect>
      <x>80</x>
-     <y>240</y>
+     <y>410</y>
      <width>75</width>
      <height>23</height>
     </rect>
@@ -29,8 +29,8 @@
   <widget class="QPushButton" name="cancel_btn">
    <property name="geometry">
     <rect>
-     <x>240</x>
-     <y>240</y>
+     <x>340</x>
+     <y>410</y>
      <width>75</width>
      <height>23</height>
     </rect>
@@ -44,8 +44,8 @@
     <rect>
      <x>70</x>
      <y>30</y>
-     <width>261</width>
-     <height>191</height>
+     <width>351</width>
+     <height>111</height>
     </rect>
    </property>
    <layout class="QFormLayout" name="formLayout">
@@ -90,6 +90,25 @@
      <widget class="QRadioButton" name="radioButton_2">
       <property name="text">
        <string>Женский</string>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QWidget" name="verticalLayoutWidget">
+   <property name="geometry">
+    <rect>
+     <x>70</x>
+     <y>160</y>
+     <width>351</width>
+     <height>241</height>
+    </rect>
+   </property>
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <item>
+     <widget class="QLabel" name="label_4">
+      <property name="text">
+       <string>Фотография</string>
       </property>
      </widget>
     </item>

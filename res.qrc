@@ -3,4 +3,8 @@
         <file>bell.wav</file>
         <file>knock.wav</file>
     </qresource>
+    <qresource prefix="/">
+        <file>img/male.png</file>
+        <file>img/female.png</file>
+    </qresource>
 </RCC>
