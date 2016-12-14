@@ -38,7 +38,7 @@ void CreateDialog::open_photo(int gender)
     QString name;
     if(gender == 1) name="male"; else if(gender == 2) name = "female";
     QPixmap img(":/img/" + name + ".png");
-    ui->label_4->setPixmap(img);
+    ui->photo->setPixmap(img);
 }
 
 void CreateDialog::clik_on_radio_1()

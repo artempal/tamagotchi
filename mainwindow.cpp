@@ -26,24 +26,23 @@ MainWindow::MainWindow(QWidget *parent) :
 
 }
 
-MainWindow::~MainWindow()
+MainWindow::~MainWindow()//деструктор
 {
     delete ui;
     delete movie;
 }
-void MainWindow::open_createdialog()
+void MainWindow::open_createdialog()//открывает диалог
 {
     CreateDialog d;
     connect(&d,SIGNAL(sendData(QString,QString,int)),this,SLOT(set_data(QString,QString,int))); //ловим сигнал обновления из диалога ввода и запускаем обработку данных
     d.exec(); //открываем диалог
 }
 
-void MainWindow::set_data(QString user_name, QString pet_name, int gender)
+void MainWindow::set_data(QString user_name, QString pet_name, int gender)//установка данных
 {
     if(user_name.isEmpty() || pet_name.isEmpty() || !gender) //если каких-то данных не получили
     {
         QMessageBox::information(this,"Ошибка","Введите данные!");
-        open_createdialog();
         return;
     }
     _user_name = user_name;
@@ -54,7 +53,7 @@ void MainWindow::set_data(QString user_name, QString pet_name, int gender)
     ui->main_wid->show(); //открываем окно игры
 }
 
-void MainWindow::create_main_wid()
+void MainWindow::create_main_wid()//создание игрового окна
 {
     QString user_name = _user_name;
     QString pet_name = _pet_name;
@@ -72,10 +71,10 @@ void MainWindow::create_main_wid()
     btn_timer_hp->start(start_timer_hp);//делаем кнопку лечить активной по таймеру
 }
 
-void MainWindow::update_indicators()
+void MainWindow::update_indicators() //
 {
     QString text = "Здоровье: ";
-    text.append(QString::number(_hp))
+    text.append(QString::number(_hp)) //
             .append("/100");
     ui->hp_label->setText(text);
     text = "Голод: ";
